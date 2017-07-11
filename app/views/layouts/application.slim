@@ -2,18 +2,9 @@ doctype html
 html
   head
     title WikiList
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
   body
-    header.navbar
-      .logo
-        = link_to "WikiList", '#', id:"logo"
-        nav
-        ul.navbar-center
-          li
-            = link_to "Main", '#'
-            = link_to "Finance", '#'
-            = link_to "Household", '#'
-            = link_to "Family", '#'
-            = link_to "More...", '#'
-    main
-      h1 Welcome to WikiList
-    
+    heder WikiList
+    = yield
