@@ -3,6 +3,9 @@ p#notice = notice
 p
   strong Title:
   = @checklist.title
+  br
+  strong Steps:
+  = @checklist.item.step
 
 = link_to 'Edit', edit_checklist_path(@checklist)
 '  |

@@ -15,7 +15,7 @@ class ChecklistsController < ApplicationController
   # GET /checklists/new
   def new
     @checklist = Checklist.new
-    @checklist.build_item #item.build #instead of build_item
+    @checklist.build_item #item(s).build -- didn't work when embeds_one #instead of build_item -- didn't work when embeds_many
   end
 
   # GET /checklists/1/edit
