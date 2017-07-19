@@ -9,5 +9,9 @@
   .field
     = f.label :title
     = f.text_field :title
+  
+  = f.fields_for :item do |builder|
+    = builder.label :step
+    = builder.text_field :step
 
   .actions = f.submit
