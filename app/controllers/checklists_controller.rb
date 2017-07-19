@@ -15,7 +15,7 @@ class ChecklistsController < ApplicationController
   # GET /checklists/new
   def new
     @checklist = Checklist.new
-    @checklist.items.build
+    @checklist.build_item #item.build #instead of build_item
   end
 
   # GET /checklists/1/edit
@@ -70,6 +70,6 @@ class ChecklistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def checklist_params
-      params.require(:checklist).permit(:title, items_attributes: [:step])
+      params.require(:checklist).permit(:title, item_attributes: [:step])
     end
 end
