@@ -10,7 +10,12 @@
     = f.label :title
     = f.text_field :title
   
-  = f.fields_for :item do |builder|
+  / = @checklist.items.each do |item|
+  /   = f.fields_for item do |i|
+  /     = item.label :step
+  /     = item.text_field :step
+  
+  = f.fields_for :items do |builder|
     = builder.label :step
     = builder.text_field :step
 
