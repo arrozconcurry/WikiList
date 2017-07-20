@@ -15,7 +15,7 @@ class ChecklistsController < ApplicationController
   # GET /checklists/new
   def new
     @checklist = Checklist.new
-    @checklist.items.build()
+    @checklist.items.build
     #item(s).build -- didn't work when embeds_one
     #instead of build_item -- didn't work when embeds_many
   end
@@ -27,7 +27,12 @@ class ChecklistsController < ApplicationController
   # POST /checklists
   # POST /checklists.json
   def create
-    @checklist = Checklist.new(checklist_params)
+    filtered_params = checklist_params
+    puts
+    puts ">>>> In update"
+    puts filtered_params.to_hash
+    puts
+    @checklist = Checklist.new(filtered_params)
 
     respond_to do |format|
       if @checklist.save
@@ -44,6 +49,7 @@ class ChecklistsController < ApplicationController
   # PATCH/PUT /checklists/1.json
   def update
     respond_to do |format|
+
       if @checklist.update(checklist_params)
         format.html { redirect_to @checklist, notice: 'Checklist was successfully updated.' }
         format.json { render :show, status: :ok, location: @checklist }
@@ -72,6 +78,6 @@ class ChecklistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def checklist_params
-      params.require(:checklist).permit(:title, item_attributes: [:step])
+      params.require(:checklist).permit(:title, items_attributes: [:step])
     end
 end
