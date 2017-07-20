@@ -16,8 +16,6 @@ class ChecklistsController < ApplicationController
   def new
     @checklist = Checklist.new
     @checklist.items.build
-    #item(s).build -- didn't work when embeds_one
-    #instead of build_item -- didn't work when embeds_many
   end
 
   # GET /checklists/1/edit
@@ -27,12 +25,7 @@ class ChecklistsController < ApplicationController
   # POST /checklists
   # POST /checklists.json
   def create
-    filtered_params = checklist_params
-    puts
-    puts ">>>> In update"
-    puts filtered_params.to_hash
-    puts
-    @checklist = Checklist.new(filtered_params)
+    @checklist = Checklist.new(checklist_params)
 
     respond_to do |format|
       if @checklist.save

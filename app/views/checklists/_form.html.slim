@@ -10,13 +10,10 @@
     = f.label :title
     = f.text_field :title
   
-  / = @checklist.items.each do |item|
-  /   = f.fields_for item do |i|
-  /     = item.label :step
-  /     = item.text_field :step
-  
   = f.fields_for :items do |builder|
-    = builder.label :step
-    = builder.text_field :step
-
+    = builder.label :steps
+    = builder.text_field :step, placeholder: "Add a step to this checklist"
+  button.btn.btn-success Add Step
+  br
+  br
   .actions = f.submit
