@@ -1,19 +1,35 @@
-= form_for @checklist do |f|
-  - if @checklist.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@checklist.errors.count, "error")} prohibited this checklist from being saved:"
-      ul
-        - @checklist.errors.full_messages.each do |message|
-          li = message
-  
-  .field
-    = f.label :title
-    = f.text_field :title
-  
-  = f.fields_for :items do |builder|
-    = builder.label :steps
-    = builder.text_field :step, placeholder: "Add a step to this checklist"
-  button.btn.btn-success Add Step
-  br
-  br
-  .actions = f.submit
+div.containter-fluid#app
+  div.row
+    div.col-sm-12
+      div.form-group
+        = form_for @checklist do |f|
+          - if @checklist.errors.any?
+            #error_explanation
+              h2 = "#{pluralize(@checklist.errors.count, "error")} prohibited this checklist from being saved:"
+              ul
+                - @checklist.errors.full_messages.each do |message|
+                  li = message
+          
+          .field
+            / div#vue-instance
+            p 
+              strong Title
+              / strong {{ titling }}
+            / = f.label :title 
+            = f.text_field :title
+          
+              / div#vue-instance
+              /   <p> {{ titling }} </p>
+              /   = f.text_field :title, "v-model": "titling"
+          
+          p Hello test test
+          
+          = f.fields_for :items do |builder|
+            = builder.label :steps
+            = builder.text_field :step, placeholder: "Add a step"
+          
+          button.btn.btn-success Add Step
+          
+          br
+          br
+          .actions = f.submit

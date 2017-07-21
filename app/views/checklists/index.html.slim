@@ -17,4 +17,12 @@ table
 
 br
 
+div#vue-instance
+  p Enter a greeting
+  input type="text" v-model="titling"
+  p
+    | {{ titling }}
+
+br
+
 = link_to 'New Checklist', new_checklist_path
