@@ -12,16 +12,18 @@ div.containter-fluid#app
           
           .field
             / div#vue-instance
+            /   p 
+            /     | {{ titling }}
+            /   = f.text_field :title, "v-model": "titling"
+            / div#vue-instance
             p 
               strong Title
               / strong {{ titling }}
             / = f.label :title 
             = f.text_field :title
           
-              / div#vue-instance
-              /   <p> {{ titling }} </p>
-              /   = f.text_field :title, "v-model": "titling"
-          
+            
+        
           p Hello test test
           
           = f.fields_for :items do |builder|
