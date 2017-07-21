@@ -24,7 +24,7 @@ div.containter-fluid#app
             | {{ todo.title }}
             button[class="btn btn-warning btn-xs pull-right"
             v-on:click.prevent="deleteTodo(todo)"] Delete
-        div.v-else
+        div[v-else]
           p You don't have any Checklist Items
             
              
