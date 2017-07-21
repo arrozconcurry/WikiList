@@ -15,13 +15,13 @@ table
         td = link_to 'Edit', edit_checklist_path(checklist)
         td = link_to 'Destroy', checklist, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
-
-div#vue-instance
-  p
-    | {{ titling }}
-  / p Enter a greeting
-  input type="text" v-model="titling"
+/ br
+/ 
+/ div#vue-instance
+/   p
+/     | {{ titling }}
+/   / p Enter a greeting
+/   input type="text" v-model="titling"
   
 
 br

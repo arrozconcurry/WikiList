@@ -11,16 +11,17 @@ div.containter-fluid#app
                   li = message
           
           .field
-            / div#vue-instance
-            /   p 
-            /     | {{ titling }}
-            /   = f.text_field :title, "v-model": "titling"
-            / div#vue-instance
-            p 
-              strong Title
-              / strong {{ titling }}
-            / = f.label :title 
-            = f.text_field :title
+            div#vue-instance
+              p 
+                strong
+                  | {{ titling }}
+              = f.text_field :title, "v-model": "titling"
+            / / div#vue-instance
+            / p 
+            /   strong Title
+            /   / strong {{ titling }}
+            / / = f.label :title 
+            / = f.text_field :title
           
             
         
