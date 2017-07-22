@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.newStep = {step: ''}
       },
       deleteStep(step) {
-        this.steps.$remove(step)
+        this.steps.splice(step, 1)
       }
     }
   })
