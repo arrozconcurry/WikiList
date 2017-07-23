@@ -8,9 +8,11 @@ html
     
   body
     header 
-      .logo
-        = link_to "WikiList", "#"
-      .login
-        button.ui.button Sign Up
-        button.ui.button Login
+      .logo.ui.sixteen.column.centered.grid
+        div.column
+          = link_to "WikiList", "#"
+      .login.ui.right.aligned.grid
+        div.column
+          button.ui.button Sign Up
+          button.ui.button Login
     = yield
