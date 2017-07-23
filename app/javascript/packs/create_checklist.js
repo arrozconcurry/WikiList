@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
           .then(successResponse => {
             // TODO: Redirect to checklist's show page
             console.log(successResponse.body._id.$oid)
+            window.location = "/checklists/" + successResponse.body._id.$oid
           }, errorResponse => {
             // TODO: Handle error
           })
