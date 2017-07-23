@@ -22,7 +22,7 @@ div.containter-fluid#app
           div[class="item"
           v-for="item in items"]
             | {{ item.step }}
-            button[class="mini ui red button right"
+            button[class="mini ui right floated red button"
             v-on:click.prevent="deleteStep(item)"] Delete
         div[v-else]
           p You don't have any Checklist Items
