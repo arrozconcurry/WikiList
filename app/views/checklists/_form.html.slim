@@ -13,8 +13,8 @@ div.containter-fluid#app
           p 
             h2
               strong
-                | {{ titling }}
-          = f.text_field :title, "v-model": "titling", class: "form-control"
+                | {{ title }}
+          = f.text_field :title, "v-model": "title", class: "form-control"
       
       div.ui.segment
         ul[class="ui relaxed divided list" 
@@ -36,4 +36,6 @@ div.containter-fluid#app
       
       br
       br
-      .actions = f.submit
+      button[class="ui primary button"
+      v-on:click.prevent="saveChecklist()"] Save Checklist
+      / .actions = f.submit

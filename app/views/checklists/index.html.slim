@@ -2,10 +2,9 @@ div.ui.secondary.menu
   div.right.menu
     div.item
       = form_tag checklists_path, method: :get do 
-        div.ui.action.left.icon.input
-          i[class="search icon"]
         = text_field_tag :search, params[:search], placeholder: "Let's get things done"
         = button_tag "Search", name:nil, class: "ui teal button"
+
 
 table.ui.fixed.single.line.sortable.celled.table
   thead
@@ -33,5 +32,3 @@ table.ui.fixed.single.line.sortable.celled.table
 br
 
 = link_to 'New Checklist', new_checklist_path, class: "ui button"
-
-<script src="https://semantic-ui.com/javascript/library/tablesort.js"></script>
