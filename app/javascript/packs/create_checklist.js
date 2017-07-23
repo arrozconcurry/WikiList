@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
     el: '#app',
     data: {
-      items: [],
+      items_attributes: [],
       newStep: {step: ''},
       title: 'Title'
     },
     methods: {
       addNewStep(newStep) {
-        this.items.push(newStep)
+        this.items_attributes.push(newStep)
         this.newStep = {step: ''}
       },
       deleteStep(item) {
-        this.items.splice(item, 1)
+        this.items_attributes.splice(item, 1)
       },
       saveChecklist() {
         // TODO: Disable all buttons on form
