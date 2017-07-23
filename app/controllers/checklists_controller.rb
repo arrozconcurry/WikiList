@@ -4,11 +4,12 @@ class ChecklistsController < ApplicationController
   # GET /checklists
   # GET /checklists.json
   def index
-    if params[:search].blank?
-      @checklists = Checklist.all
-    else
-      @checklists = Checklist.search(params[:search])
-    end
+    @checklists = Checklist.all
+    # if params[:search].blank?
+    #   @checklists = Checklist.all
+    # else
+    #   @checklists = Checklist.search(params[:search])
+    # end
   end
 
   # GET /checklists/1
