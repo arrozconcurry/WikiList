@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     methods: {
       addNewStep(newStep) {
         this.items.push(newStep)
-        // this.newStep = {step: ''}
+        this.newStep = {step: ''}
       },
       deleteStep(item) {
         this.items.splice(item, 1)
