@@ -2,12 +2,12 @@ class ChecklistsController < ApplicationController
   before_action :set_checklist, only: [:show, :edit, :update, :destroy]
 
   def index
-    @checklists = Checklist.all
-    # if params[:search].blank?
-    #   @checklists = Checklist.all
-    # else
-    #   @checklists = Checklist.search(params[:search])
-    # end
+    # @checklists = Checklist.all
+    if params[:search].blank?
+      @checklists = Checklist.all
+    else
+      @checklists = Checklist.search(params[:search])
+    end
   end
 
   def show
