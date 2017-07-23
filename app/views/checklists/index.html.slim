@@ -1,4 +1,11 @@
-h1 Listing checklists
+div.row
+  div.col-lg-6.col-lg-offset-3
+    div.input-group
+      input type="search" class="form-control" placeholder="Search for"
+      span.input-group-btn
+        button.btn.btn-default Go!
+
+br 
 
 table
   thead
@@ -11,18 +18,10 @@ table
     - @checklists.each do |checklist|
       tr
         td = checklist.title
+        / this functionality only if logged in.
         td = link_to 'Show', checklist
         td = link_to 'Edit', edit_checklist_path(checklist)
         td = link_to 'Destroy', checklist, data: { confirm: 'Are you sure?' }, method: :delete
-
-/ br
-/ 
-/ div#vue-instance
-/   p
-/     | {{ titling }}
-/   / p Enter a greeting
-/   input type="text" v-model="titling"
-  
 
 br
 

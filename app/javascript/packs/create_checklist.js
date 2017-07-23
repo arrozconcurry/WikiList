@@ -5,17 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
     el: '#app',
     data: {
-      steps: [],
+      items: [],
       newStep: {step: ''},
       titling: 'Title'
     },
     methods: {
       addNewStep(newStep) {
-        this.steps.push(newStep)
-        this.newStep = {step: ''}
+        this.items.push(newStep)
+        // this.newStep = {step: ''}
       },
-      deleteStep(step) {
-        this.steps.splice(step, 1)
+      deleteStep(item) {
+        this.items.splice(item, 1)
       }
     }
   })

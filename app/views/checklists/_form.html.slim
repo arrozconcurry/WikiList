@@ -18,12 +18,12 @@ div.containter-fluid#app
             = f.text_field :title, "v-model": "titling", class: "form-control"
           
         ul[class="list-group" 
-        v-if="steps.length > 0"]
+        v-if="items.length > 0"]
           li[class="list-group-item"
-          v-for="step in steps"]
-            | {{ step.step }}
+          v-for="item in items"]
+            | {{ item.step }}
             button[class="btn btn-warning btn-xs pull-right"
-            v-on:click.prevent="deleteStep(step)"] Delete
+            v-on:click.prevent="deleteStep(item)"] Delete
         div[v-else]
           p You don't have any Checklist Items
         
