@@ -6,8 +6,11 @@ p
   br
   strong Steps:
   br
+  div.ui.checkbox
   - @checklist.items.each do |x| 
-    li = x[:step]
+    input type="checkbox" name="checklist"
+    label = x[:step]
+      
 
 = link_to 'Edit', edit_checklist_path(@checklist)
 '  |
