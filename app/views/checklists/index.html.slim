@@ -1,0 +1,34 @@
+div.ui.secondary.menu
+  div.right.menu
+    div.item
+      = form_tag checklists_path, method: :get do 
+        = text_field_tag :search, params[:search], placeholder: "Let's get things done"
+        = button_tag "Search", name:nil, class: "ui teal button"
+
+
+table.ui.fixed.single.line.sortable.celled.table
+  thead
+    tr
+      th Title
+      th 
+      th
+      th
+
+  tbody
+    - @checklists.each do |checklist|
+      tr
+        td = checklist.title
+        / this functionality only if logged in.
+        td = link_to 'Show', checklist
+        td = link_to 'Edit', edit_checklist_path(checklist)
+        td = link_to 'Destroy', checklist, data: { confirm: 'Are you sure?' }, method: :delete
+  tfoot
+    tr
+      th
+      th
+      th
+      th
+         
+br
+
+= link_to 'New Checklist', new_checklist_path, class: "ui button"

@@ -1,0 +1,41 @@
+div.containter-fluid#app
+  div.ui.form
+    = form_for @checklist do |f|
+      - if @checklist.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@checklist.errors.count, "error")} prohibited this checklist from being saved:"
+          ul
+            - @checklist.errors.full_messages.each do |message|
+              li = message
+      
+      .field
+        div#vue-instance
+          p 
+            h2
+              strong
+                | {{ title }}
+          = f.text_field :title, "v-model": "title", class: "form-control"
+      
+      div.ui.segment
+        ul[class="ui relaxed divided list" 
+        v-if="items_attributes.length > 0"]
+          div[class="item"
+          v-for="item in items_attributes"]
+            | {{ item.step }}
+            button[class="mini ui right floated red button"
+            v-on:click.prevent="deleteStep(item)"] Delete
+        div[v-else]
+          p You don't have any Checklist Items
+      
+      = f.fields_for :items do |builder|
+        = builder.label :steps
+        = builder.text_field :step, placeholder: "Add a step", class: "form-control", "v-model": "newStep.step"
+
+      button[class="ui primary button"
+      v-on:click.prevent="addNewStep(newStep)"] Add Step
+      
+      br
+      br
+      button[class="ui primary button"
+      v-on:click.prevent="saveChecklist()"] Save Checklist
+      / .actions = f.submit
