@@ -7,7 +7,7 @@ p
   strong Steps:
   br
   - @checklist.items.each do |x| 
-    = x[:step] + "\n"
+    li = x[:step]
 
 = link_to 'Edit', edit_checklist_path(@checklist)
 '  |
