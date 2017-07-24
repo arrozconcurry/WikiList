@@ -1,15 +1,15 @@
 p#notice = notice
 
 p
-  strong Title: 
-  = @checklist.title
-  br
+  h2
+    = @checklist.title
   strong Steps:
   br
   div.ui.checkbox
   - @checklist.items.each do |x| 
-    input type="checkbox" name="checklist"
-    label = x[:step]
+    div.ui.segment
+      input type="checkbox" name="checklist"
+      label = x[:step]
       
 
 = link_to 'Edit', edit_checklist_path(@checklist)
