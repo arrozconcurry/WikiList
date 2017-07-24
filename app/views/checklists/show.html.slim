@@ -4,7 +4,6 @@ p
   h2
     = @checklist.title
   strong Steps:
-  br
   div.ui.checkbox
   - @checklist.items.each do |x| 
     div.ui.segment
@@ -12,6 +11,6 @@ p
       label = " " + x[:step]
       
 
-= link_to 'Edit', edit_checklist_path(@checklist)
+= link_to 'Edit', edit_checklist_path(@checklist), class: "ui yellow button"
 '  |
-= link_to 'Back', checklists_path
+= link_to 'Back', checklists_path, class: "ui button"
