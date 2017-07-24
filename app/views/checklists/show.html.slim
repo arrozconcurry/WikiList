@@ -9,7 +9,7 @@ p
   - @checklist.items.each do |x| 
     div.ui.segment
       input type="checkbox" name="checklist"
-      label = x[:step]
+      label = " " + x[:step]
       
 
 = link_to 'Edit', edit_checklist_path(@checklist)

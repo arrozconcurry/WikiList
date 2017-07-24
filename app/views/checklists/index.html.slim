@@ -21,7 +21,7 @@ table.ui.fixed.single.line.sortable.celled.table
         / this functionality only if logged in.
         td = link_to 'Show', checklist
         td = link_to 'Edit', edit_checklist_path(checklist)
-        td = link_to 'Destroy', checklist, data: { confirm: 'Are you sure?' }, method: :delete
+        td.negative = link_to 'Destroy', checklist, data: { confirm: 'Are you sure?' }, method: :delete
   tfoot
     tr
       th
