@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Docs for $http -> https://github.com/pagekit/vue-resource
         this.$http.post('/checklists', { checklist: this.$data })
           .then(successResponse => {
-            // TODO: Redirect to checklist's show page
             console.log(successResponse.body._id.$oid)
             window.location = "/checklists/" + successResponse.body._id.$oid
           }, errorResponse => {

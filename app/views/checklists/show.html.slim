@@ -1,11 +1,13 @@
 p#notice = notice
 
 p
-  strong Title:
+  strong Title: 
   = @checklist.title
   br
   strong Steps:
-  = @checklist.items
+  br
+  - @checklist.items.each do |x| 
+    = x[:step] + "\n"
 
 = link_to 'Edit', edit_checklist_path(@checklist)
 '  |
