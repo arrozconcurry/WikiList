@@ -1,6 +1,6 @@
-div.ui.secondary.menu
-  div.right.menu
-    div.item
+div.ui.column.center.aligned.grid
+  div.column.sixteen.wide
+    div.ui.action.input
       = form_tag checklists_path, method: :get do 
         = text_field_tag :search, params[:search], placeholder: "Let's get things done"
         = button_tag "Search", name:nil, class: "ui teal button"
