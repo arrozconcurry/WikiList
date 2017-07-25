@@ -1,19 +1,20 @@
-section#checking
-  p
-    h2
-      = @checklist.title
-    strong Steps:
-    div.ui.checkbox
-    - @checklist.items.each do |x| 
-      div.ui.segment
-        input type="checkbox" name="step"
-        label = " " + x[:step]
+body
+  section#mark
+    p
+      h2
+        = @checklist.title
+      strong Steps:
+      div.ui.checkbox
+      - @checklist.items.each do |x| 
+        div.ui.segment
+          input type="checkbox" v-model="checked"
+          label = " " + x[:step]
 
-  div.ui.buttons      
-    = link_to 'Back', checklists_path, class: "ui button"
-    div.or
-    = link_to 'Edit', edit_checklist_path(@checklist), class: "ui yellow button"
+    div.ui.buttons      
+      = link_to 'Back', checklists_path, class: "ui button"
+      div.or
+      = link_to 'Edit', edit_checklist_path(@checklist), class: "ui yellow button"
 
-script src="dist/sweetalert.min.js"
-link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css"
+script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"
+link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
 = javascript_pack_tag 'show_checklist'

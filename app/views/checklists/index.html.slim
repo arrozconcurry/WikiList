@@ -1,10 +1,10 @@
 div.ui.column.center.aligned.grid
   div.column.sixteen.wide
-    div.ui.action.input
+    div.ui.huge.input.focus
       = form_tag checklists_path, method: :get do 
         = text_field_tag :search, params[:search], placeholder: "Let's get things done"
-        = button_tag "Search", name:nil, class: "ui teal button"
-
+        = button_tag "Search", name:nil, class: "ui teal huge button"
+          
 
 table.ui.fixed.single.line.sortable.celled.table
   thead
