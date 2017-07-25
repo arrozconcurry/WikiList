@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#mark',
     data: {
       checked: false
+    },
+    watch: {
+      'checked': function() {
+        swal("Good job!", "You completed this checklist!", "success")
+      }
     }
   })
 })
