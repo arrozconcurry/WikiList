@@ -1,16 +1,19 @@
-p#notice = notice
+section#checking
+  p
+    h2
+      = @checklist.title
+    strong Steps:
+    div.ui.checkbox
+    - @checklist.items.each do |x| 
+      div.ui.segment
+        input type="checkbox" name="step"
+        label = " " + x[:step]
 
-p
-  h2
-    = @checklist.title
-  strong Steps:
-  div.ui.checkbox
-  - @checklist.items.each do |x| 
-    div.ui.segment
-      input type="checkbox" name="checklist"
-      label = " " + x[:step]
-      
+  div.ui.buttons      
+    = link_to 'Back', checklists_path, class: "ui button"
+    div.or
+    = link_to 'Edit', edit_checklist_path(@checklist), class: "ui yellow button"
 
-= link_to 'Edit', edit_checklist_path(@checklist), class: "ui yellow button"
-'  |
-= link_to 'Back', checklists_path, class: "ui button"
+script src="dist/sweetalert.min.js"
+link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css"
+= javascript_pack_tag 'show_checklist'

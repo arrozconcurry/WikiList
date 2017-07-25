@@ -11,8 +11,21 @@ html
       .logo.ui.sixteen.column.centered.grid
         div.column
           = link_to "WikiList", root_path
-      .login.ui.right.aligned.grid
-        div.column
-          button.ui.button Sign Up
-          button.ui.button Login
+      div.ui.stackable.container.menu
+        div.header.item Categories
+        a.item Finance
+        a.item Household
+        a.item Family
+        a.item Tech
+        a.item Survival
+        div.ui.simple.dropdown.icon.item
+          i.caret.down.icon
+          div.menu
+            div.item Education
+            div.item Travel
+            div.item Hobbies
+        div.right.menu
+          a.ui.item Sign Up
+          a.ui.item Login
+      br
     = yield
