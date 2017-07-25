@@ -3,12 +3,13 @@ body
     p
       h2
         = @checklist.title
-      strong Steps:
-      div.ui.checkbox
-      - @checklist.items.each do |x| 
-        div.ui.segment
-          input type="checkbox" v-model="checked"
-          label = " " + x[:step]
+      div.ui.list
+        strong Steps:
+        div.ui.checkbox
+        - @checklist.items.each do |x| 
+          div.ui.segment
+            input type="checkbox" v-model="checked"
+            label = " " + x[:step]
 
     div.ui.buttons      
       = link_to 'Back', checklists_path, class: "ui button"
