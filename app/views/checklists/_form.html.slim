@@ -32,6 +32,16 @@ section.ui.form#app
 
     button[class="ui primary button"
     v-on:click.prevent="addNewStep(newStep)"] Add Step
+    br
+    br
+    	
+    div.ui.simple.selection.dropdown
+      input type="hidden" name="gender"
+      <i class="dropdown icon"></i>
+      div.default.text Category
+      div.menu
+        div class="item" data-value="1" Finance
+        div class="item" data-value="0" Household
     
     br
     br
