@@ -1,13 +1,16 @@
 import Vue from 'vue/dist/vue.js'
 import App from './app.vue'
-import VueResource from 'vue-resource'
+import KonamiCode from 'vue-konami-code'
+// import VueResource from 'vue-resource'
 
-Vue.use(VueResource)
+// Vue.use(VueResource)
+Vue.use(KonamiCode, {callback: function() {
+  alert('Snake? Snake!? Snaaaaake!')
+}})
 
-document.addEventListener('DOMContentLoaded', () => {
-  Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-
-  var app = new Vue({
+// document.addEventListener('DOMContentLoaded', () => {
+  // Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+  // var app = new Vue({
     // TODO
     // updateChecklist() {
     //   console.log("Update checklist");
@@ -20,5 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
     //       // TODO: Handle error
     //     })
     // }
-  })
-})
+  // })
+// })
