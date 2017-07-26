@@ -6,11 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
   var cked = new Vue({
     el: '#mark',
     data: {
-      checked: false
+      totalSteps: $("#mark").find("input[type=checkbox]").length,
+      checkedSteps: []
     },
     watch: {
-      'checked': function() {
-        if (this.$data.checked) {
+      'checkedSteps': function() {      
+        if (this.$data.checkedSteps.length == this.$data.totalSteps) {
           swal("Good job!", "You completed this checklist!", "success")
         }
       }

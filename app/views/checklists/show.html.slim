@@ -8,7 +8,7 @@ body
         div.ui.checkbox
         - @checklist.items.each do |x| 
           div.ui.segment
-            input type="checkbox" v-model="checked"
+            input type="checkbox" value="#{ x[:step] }" v-model="checkedSteps"
             label = " " + x[:step]
 
     div.ui.buttons      
