@@ -6,10 +6,14 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 document.addEventListener('DOMContentLoaded', () => {
+  Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+
   var deleteList = new Vue({
     el: '#remove',
     methods: {
-      deleteWarning() {
+      deleteWarning(deleteUrl) {
+        var instance = this;
+
         swal({
           title: "Are you sure?",
           text: "You will not be able to recover this checklist!",
@@ -20,10 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
           closeOnConfirm: false
         },
         function(){
-          swal("Deleted!", "This checklist has been deleted.", "error");
-          this.$http.delete($('#remove').html(), { checklist })
-          .then(successResponse => {
-            window.location = "/checklists"
+          instance.$http.delete(deleteUrl).then(successResponse => {
+            swal({
+              title: "Deleted!",
+              text: "This checklist has been deleted.",
+              type: "error"
+            }, function() {
+              window.location.reload();
+            });
+
+          }, errorResponse => {
+            // TODO: Error Handling
+            console.log("Hmm, what happened...");
           })
         })
       }
