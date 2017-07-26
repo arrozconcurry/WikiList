@@ -4,9 +4,9 @@ class ChecklistsController < ApplicationController
   def index
     # @checklists = Checklist.all
     if params[:search].blank?
-      @checklists = Checklist.all
+      @checklists = Checklist.all.page(params[:page]).per(5)
     else
-      @checklists = Checklist.search(params[:search])
+      @checklists = Checklist.search(params[:search]).page(params[:page])
     end
   end
 

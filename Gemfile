@@ -9,6 +9,8 @@ end
 gem 'mongoid'
 gem 'slim-rails'
 gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
+gem 'kaminari-mongoid'
+gem 'kaminari-actionview'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
