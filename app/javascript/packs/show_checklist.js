@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     watch: {
       'checked': function() {
-        swal("Good job!", "You completed this checklist!", "success")
+        if (this.$data.checked) {
+          swal("Good job!", "You completed this checklist!", "success")
+        }
       }
     }
   })
