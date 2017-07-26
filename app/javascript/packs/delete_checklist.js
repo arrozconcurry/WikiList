@@ -1,9 +1,9 @@
 import Vue from 'vue/dist/vue.js'
 import App from './app.vue'
 import sweetalert from 'sweetalert'
-// import VueResource from 'vue-resource'
-//
-// Vue.use(VueResource)
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
 
 document.addEventListener('DOMContentLoaded', () => {
   var deleteList = new Vue({
@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         function(){
           swal("Deleted!", "This checklist has been deleted.", "error");
-          // this.$http.delete($('#remove').html(), { checklist })
-          // .then(successResponse => {
-          //   window.location = "/checklists"
-          // })
+          this.$http.delete($('#remove').html(), { checklist })
+          .then(successResponse => {
+            window.location = "/checklists"
+          })
         })
       }
     }
