@@ -6,10 +6,10 @@ body
       div.ui.list
         strong Steps:
         div.ui.checkbox
-        - @checklist.items.each do |x| 
+        - @checklist.items.each_with_index do |item, index| 
           div.ui.segment
-            input type="checkbox" value="#{ x[:step] }" v-model="checkedSteps"
-            label = " " + x[:step]
+            input type="checkbox" value="Step #{ index + 1 }. #{item[:step]}" v-model="checkedSteps"
+            label = " " + item[:step]
 
     div.ui.buttons      
       = link_to 'Back', checklists_path, class: "ui button"
