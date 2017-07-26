@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var deleteList = new Vue({
     el: '#remove',
     methods: {
-      deleteChecklist() {
+      deleteWarning() {
         swal({
           title: "Are you sure?",
           text: "You will not be able to recover this checklist!",
@@ -21,7 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         function(){
           swal("Deleted!", "This checklist has been deleted.", "error");
-        });
+          // this.$http.delete($('#remove').html(), { checklist })
+          // .then(successResponse => {
+          //   window.location = "/checklists"
+          // })
+        })
       }
     }
   })

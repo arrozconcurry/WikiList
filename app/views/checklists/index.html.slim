@@ -22,7 +22,7 @@ body
           / this functionality only if logged in.
           td = link_to 'Show', checklist, class: "ui primary basic button"
           td.warning = link_to 'Edit', edit_checklist_path(checklist), class: "ui yellow basic button"
-          td.negative = link_to 'Destroy', checklist, "v-on:click.prevent": "deleteChecklist()", class: "ui red basic button"
+          td.negative = link_to 'Destroy', checklist, "v-on:click.prevent": "deleteWarning()", class: "ui red basic button"
     tfoot
       tr
         th
