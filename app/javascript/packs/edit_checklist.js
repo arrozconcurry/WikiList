@@ -13,7 +13,7 @@ Vue.use(KonamiCode, {callback: function() {
     imageUrl: "http://cultofthepartyparrot.com/parrots/hd/discoparrot.gif"
   },
   function() {
-    var s = document.getElementById('colors').style,
+    var styling = document.getElementById('colors').style,
     f = false,
     c1 = '#d78cff',
     c2 = '#88ff89',
@@ -21,8 +21,8 @@ Vue.use(KonamiCode, {callback: function() {
     c4 = '#8bb5fe';
 
     setInterval(function() {
-      s.backgroundColor = f ? c2 : c1;
-      s.color = f ? c3 : c4;
+      styling.backgroundColor = f ? c2 : c1;
+      styling.color = f ? c3 : c4;
       f = !f;
     }, 500);
   }());
