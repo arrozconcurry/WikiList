@@ -9,8 +9,8 @@ Vue.use(KonamiCode, {callback: function() {
   swal({
     title: "Konami Powers Ignite!",
     text: "It's a party!",
-    // timer: 5000,
-    imageUrl: "http://cultofthepartyparrot.com/parrots/hd/discoparrot.gif"
+    imageUrl: "http://cultofthepartyparrot.com/parrots/hd/discoparrot.gif",
+    showConfirmButton: false
   },
   function() {
     var styling = document.getElementById('colors').style,
